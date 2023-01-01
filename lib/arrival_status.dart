@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'arrival_status.dart';
-
-class StationSignUpPage extends StatefulWidget {
-  const StationSignUpPage({Key? key}) : super(key: key);
+class ArrivalStatusPage extends StatefulWidget {
+  const ArrivalStatusPage({Key? key}) : super(key: key);
 
   @override
-  State<StationSignUpPage> createState() => _StationSignUpPageState();
+  State<ArrivalStatusPage> createState() => _ArrivalStatusPageState();
 }
 
-class _StationSignUpPageState extends State<StationSignUpPage> {
+class _ArrivalStatusPageState extends State<ArrivalStatusPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,63 +19,67 @@ class _StationSignUpPageState extends State<StationSignUpPage> {
             children: [
               Center(
                 child: Image.asset("assets/fuel.png",
-                  height: 180,
-                  width: 90,
+                  height: 120,
+                  width: 60,
                 ),
               ),
 
+              Text("Arrival Status",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.red),),
+              SizedBox(height: 10,),
+              Text("Arrival Date",style: TextStyle(fontSize: 15),),
+              SizedBox(height: 5,),
               TextFormField(
                 decoration:InputDecoration(
-                  hintText: "User Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextFormField(
-                obscureText: true,
-                decoration:InputDecoration(
-                  hintText: "Email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-
-              ),
-              SizedBox(height: 20,),
-              TextFormField(
-                obscureText: true,
-                decoration:InputDecoration(
-                  hintText: "Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextFormField(
-                obscureText: true,
-                decoration:InputDecoration(
-                  hintText: " Confirm Password",
+                  suffixIcon: Icon(Icons.calendar_month),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
               ),
 
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
+              Text("Arrival Time",style: TextStyle(fontSize: 15),),
+              SizedBox(height: 5,),
               TextFormField(
-
                 decoration:InputDecoration(
-                  hintText: "Location",
+                  suffixIcon: Icon(Icons.watch_later_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
               ),
 
-              SizedBox(height: 60,),
+              SizedBox(height: 15,),
+              Text("Fuel Type (By Liters)",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.red),),
+              SizedBox(height: 10,),
+              Text("Petrol",style: TextStyle(fontSize: 15),),
+              SizedBox(height: 5,),
+              TextFormField(
+                decoration:InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 10,),
+              Text("Desel",style: TextStyle(fontSize: 15),),
+              SizedBox(height: 5,),
+              TextFormField(
+                decoration:InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30,),
+              Row(
+                children: [
+                  Text("Stock Finished",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                ],
+              ),
+
+              SizedBox(height: 15,),
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -85,11 +87,7 @@ class _StationSignUpPageState extends State<StationSignUpPage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                   ),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return const ArrivalStatusPage();
-                    },),);
-                  },
+                  onPressed: (){},
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 22),

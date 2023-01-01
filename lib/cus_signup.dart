@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fuel_app/search_page.dart';
 
 class CustomerSignUpPage extends StatefulWidget {
   const CustomerSignUpPage({Key? key}) : super(key: key);
@@ -94,7 +95,11 @@ class _CustomerSignUpPageState extends State<CustomerSignUpPage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return const SearchPage();
+                    },),);
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 22),
