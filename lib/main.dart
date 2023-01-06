@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/Fuel%20status.dart';
+import 'package:fuel_app/Fuel%20status_stat.dart';
+import 'package:fuel_app/arrival_status.dart';
 
 import 'login.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.red),
-      home: FuelStatus(),
+      home: LoginPage(),
     );
   }
 }
