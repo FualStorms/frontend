@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fuelstatus_cus.dart';
+
 class ArrivalStatusPage extends StatefulWidget {
   const ArrivalStatusPage({Key? key}) : super(key: key);
 
@@ -87,10 +89,19 @@ class _ArrivalStatusPageState extends State<ArrivalStatusPage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                   ),
-                  onPressed: (){},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ArrivalStatusPage();
+                          },
+                        ),
+                      );
+                    },
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 22),
+                    child: Text("Submit",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 22),
                     ),
                   ),
                 ),

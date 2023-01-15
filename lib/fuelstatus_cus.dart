@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/arrival_status.dart';
+import 'package:fuel_app/search_page.dart';
 
-class FuelStatus_stat extends StatefulWidget {
-  const FuelStatus_stat({Key? key}) : super(key: key);
+import 'customer_login.dart';
+import 'login.dart';
+
+class FuelStatus_cus extends StatefulWidget {
+  const FuelStatus_cus({Key? key}) : super(key: key);
 
   @override
-  State<FuelStatus_stat> createState() => _FuelStatusState();
+  State<FuelStatus_cus> createState() => _FuelStatusState();
 }
 
-class _FuelStatusState extends State<FuelStatus_stat> {
+class _FuelStatusState extends State<FuelStatus_cus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,19 +24,20 @@ class _FuelStatusState extends State<FuelStatus_stat> {
               Center(
                 child: Image.asset(
                   "assets/fuel.png",
-                  height: 180,
-                  width: 90,
+                  height: 100,
+                  width: 50,
                 ),
               ),
               Center(
                 child: Text(
-                  'Imali & sons',
+                  'CEYPETCO Ratnapura',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 40,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
               ),
+              SizedBox(height: 15,),
               Text(
                 'Current Fuel Status',
                 style: TextStyle(
@@ -98,7 +103,7 @@ class _FuelStatusState extends State<FuelStatus_stat> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "4567",
+
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -116,7 +121,7 @@ class _FuelStatusState extends State<FuelStatus_stat> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "4567",
+
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -126,11 +131,11 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                 height: 20,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(170, 100),
+                      fixedSize: const Size(150, 80),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     ),
@@ -139,7 +144,7 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const ArrivalStatusPage();
+                            return const SearchPage();
                           },
                         ),
                       );
@@ -147,11 +152,11 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Text(
-                        "Exit before pump Fuel",
+                        "Exit before Pump Fuel",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 27),
+                            fontSize: 20),
                       ),
                     ),
                   ),
@@ -160,7 +165,7 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(170, 100),
+                      fixedSize: const Size(150, 80),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     ),
@@ -169,7 +174,7 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const ArrivalStatusPage();
+                            return const CustomerLoginPage();
                           },
                         ),
                       );
@@ -177,11 +182,11 @@ class _FuelStatusState extends State<FuelStatus_stat> {
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Text(
-                        "Exit after pump fuel",
+                        "Exit after Pump Fuel",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 27),
+                            fontSize: 20),
                       ),
                     ),
                   ),

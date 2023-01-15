@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fuel_app/search_page.dart';
+
+import 'fuelstatus_cus.dart';
 
 class FuelStatus extends StatefulWidget {
   const FuelStatus({Key? key}) : super(key: key);
@@ -19,19 +22,20 @@ class _FuelStatusState extends State<FuelStatus> {
               Center(
                 child: Image.asset(
                   "assets/fuel.png",
-                  height: 180,
-                  width: 90,
+                  height: 140,
+                  width: 70,
                 ),
               ),
               Center(
                 child: Text(
-                  'Imali & sons',
+                  'CEYPETCO Ratnapura',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 40,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
               ),
+              SizedBox(height: 15,),
               Text(
                 'Current Fuel Status',
                 style: TextStyle(
@@ -97,7 +101,6 @@ class _FuelStatusState extends State<FuelStatus> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "4567",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -115,7 +118,6 @@ class _FuelStatusState extends State<FuelStatus> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "4567",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -133,7 +135,16 @@ class _FuelStatusState extends State<FuelStatus> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const SearchPage();
+                          },
+                        ),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Text(
@@ -154,7 +165,16 @@ class _FuelStatusState extends State<FuelStatus> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const FuelStatus_cus();
+                          },
+                        ),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Text(

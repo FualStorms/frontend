@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Fuel status.dart';
+
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -26,7 +28,17 @@ class _SearchPageState extends State<SearchPage> {
             TextFormField(
               decoration:InputDecoration(
                 hintText: "Search Location",
-                prefixIcon: Icon(Icons.search_rounded),
+                prefixIcon: IconButton(onPressed:(){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const FuelStatus();
+                      },
+                    ),
+                  );
+                },
+                    icon: Icon(Icons.search)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
