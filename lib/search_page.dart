@@ -1,54 +1,110 @@
 import 'package:flutter/material.dart';
-
+import 'package:fuel_app/fuelstatus_cus.dart';
 import 'Fuel status.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
   @override
-  State<SearchPage> createState() => _SearchPageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
+  TextEditingController searchController = TextEditingController();
+  bool isLoading = false;
+  bool hasUserSearched = false;
+  String stationName = "";
+  String city = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Center(
-             child: Image.asset("assets/fuel.png",
-             height: 300,
-             width: 150,
+      backgroundColor: Color(0xFFF1EDF4),
+      appBar: AppBar(
+        title: TextField(
+          controller: searchController,
+          style: TextStyle(color: Colors.white),
+          decoration: InputDecoration(
+              hintText: "Search location",
+              border: InputBorder.none
+          ),
         ),
-    ),
-            SizedBox(height: 30,),
-            TextFormField(
-              decoration:InputDecoration(
-                hintText: "Search Location",
-                prefixIcon: IconButton(onPressed:(){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const FuelStatus();
-                      },
-                    ),
-                  );
-                },
-                    icon: Icon(Icons.search)),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25),
-                ),
+        actions: [
+
+          GestureDetector(
+            onTap: (){
+              initiateSearchMethod();
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Container(
+                child: Icon(Icons.search),
               ),
-
             ),
-    ]
-        ),
-      ),
+          )
+        ],
 
+      ),
+      body: Column(
+        children: [
+          Container(),
+          isLoading ? const Center(child: CircularProgressIndicator(),) :stationList()
+        ],
+      ),
+    );
+  }
+
+  initiateSearchMethod(){
+    setState(() {
+      isLoading = false;
+      hasUserSearched = true;
+    });
+    city = "Ratnapura";
+    stationName = "CEYPETCO";
+
+  }
+
+  stationList(){
+    return hasUserSearched ?
+    ListView.builder(
+        shrinkWrap: true,
+        itemCount: 2,
+        itemBuilder: (context, index){
+          return GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const FuelStatus_cus();
+              },),);
+            },
+            child: stationTile(
+              city,
+              stationName,
+            ),
+          );
+        }
+    ):Container();
+  }
+
+  Widget stationTile(String city, String stationName){
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 0.2,
+                blurRadius: 5,
+                offset: const Offset(0.0, 5.0)
+            )
+          ]
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      padding: const EdgeInsets.symmetric(vertical: 3,),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+        title: Text(stationName),
+        subtitle: Text(city),
+      ),
     );
   }
 }
