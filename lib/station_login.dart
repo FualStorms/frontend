@@ -51,9 +51,6 @@ class _StationLoginPageState extends State<StationLoginPage> {
                       if (value == null || value.isEmpty) {
                         return "Please enter Username";
                       }
-                      else if (value.length < 4) {
-                        return "Username is too short";
-                      }
                       return null;
                     }
 
@@ -72,9 +69,6 @@ class _StationLoginPageState extends State<StationLoginPage> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter Password";
-                      }
-                      else if (value.length < 8) {
-                        return "Password's characters must be 8 characters";
                       }
                       return null;
                     }
