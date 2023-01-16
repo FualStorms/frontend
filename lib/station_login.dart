@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'arrival_status.dart';
 import 'stat_signup.dart';
 
 class StationLoginPage extends StatefulWidget {
@@ -83,6 +84,9 @@ class _StationLoginPageState extends State<StationLoginPage> {
                           borderRadius: BorderRadius.circular(15)),
                     ),
                     onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return const ArrivalStatusPage();
+                      },),);
                       if (_formkey.currentState!.validate()){
                       }
                     },

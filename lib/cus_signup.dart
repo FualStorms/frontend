@@ -81,6 +81,7 @@ class _CustomerSignUpPageState extends State<CustomerSignUpPage> {
                 ),
                 SizedBox(height: 15,),
                 TextFormField(
+                  controller: _passwordcontroller,
                   obscureText: true,
                   decoration:InputDecoration(
                     hintText: "Password",
@@ -170,9 +171,9 @@ class _CustomerSignUpPageState extends State<CustomerSignUpPage> {
                     onPressed: (){
                             if (_formkey.currentState!.validate()){
                             }
-                     /* Navigator.push(context, MaterialPageRoute(builder: (context){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const SearchPage();
-                      },),);*/
+                      },),);
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8),

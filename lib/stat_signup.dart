@@ -82,6 +82,7 @@ class _StationSignUpPageState extends State<StationSignUpPage> {
                 SizedBox(height: 15,),
                 TextFormField(
                     obscureText: true,
+                    controller: _passwordcontroller,
                     decoration:InputDecoration(
                       hintText: "Password",
                       border: OutlineInputBorder(
@@ -141,9 +142,9 @@ class _StationSignUpPageState extends State<StationSignUpPage> {
                     onPressed: (){
                                if (_formkey.currentState!.validate()) {
                                }
-                      /*Navigator.push(context, MaterialPageRoute(builder: (context){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const ArrivalStatusPage();
-                      },),);*/
+                      },),);
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8),

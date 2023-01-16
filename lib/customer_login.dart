@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/cus_signup.dart';
+import 'package:fuel_app/fuelstatus_cus.dart';
 
 class CustomerLoginPage extends StatefulWidget {
   const CustomerLoginPage({Key? key}) : super(key: key);
@@ -89,6 +90,9 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                           borderRadius: BorderRadius.circular(15)),
                     ),
                     onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return const FuelStatus_cus();
+                      },),);
                       if (_formkey.currentState!.validate()){
                       }
                     },

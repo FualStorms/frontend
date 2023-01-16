@@ -75,11 +75,7 @@ class _ArrivalStatusPageState extends State<ArrivalStatusPage> {
                 ),
               ),
               SizedBox(height: 30,),
-              Row(
-                children: [
-                  Text("Stock Finished",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-                ],
-              ),
+
 
               SizedBox(height: 15,),
               Center(
