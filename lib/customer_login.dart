@@ -90,7 +90,6 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                     ),
                     onPressed: (){
                       if (_formkey.currentState!.validate()){
-
                       }
                     },
                     child: Padding(
