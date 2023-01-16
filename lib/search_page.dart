@@ -10,6 +10,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +21,8 @@ class _SearchPageState extends State<SearchPage> {
           children: [
              Center(
              child: Image.asset("assets/fuel.png",
-             height: 300,
-             width: 150,
+             height: 250,
+             width: 125,
         ),
     ),
             SizedBox(height: 30,),

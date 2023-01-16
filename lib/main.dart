@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/Fuel%20status.dart';
 import 'package:fuel_app/arrival_status.dart';
-
-
 import 'login.dart';
 
 void main() {
